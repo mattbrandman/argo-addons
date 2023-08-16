@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: aws-load-balancer-controller-eks-irsa
+automountServiceAccountToken: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-load-balancer-controller
+  namespace: kube-system
+spec:
+  project: default
+  source:
+    chart: aws-load-balancer-controller
+    repoURL:  https://aws.github.io/eks-charts
+    targetRevision: 1.16.1
+    helm:
+      releaseName: aws-load-balancer-controller
+      valuesObject:
+        serviceAccount:
+          create: false
+          name: aws-load-balancer-controller-eks-irsa
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
