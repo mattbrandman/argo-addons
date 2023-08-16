@@ -18,6 +18,7 @@ spec:
     helm:
       releaseName: aws-load-balancer-controller
       valuesObject:
+        clusterName: terraform
         serviceAccount:
           create: false
           name: aws-load-balancer-controller-eks
