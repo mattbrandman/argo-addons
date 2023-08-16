@@ -16,6 +16,19 @@ spec:
         serviceAccount:
           create: true
           name: aws-load-balancer-controller-eks
+        ignoreDifferences:
+        - group: ""
+          jsonPointers:
+          - /data
+          kind: Secret
+        - group: admissionregistration.k8s.io
+          jqPathExpressions:
+          - .webhooks[]?.clientConfig.caBundle
+          kind: MutatingWebhookConfiguration
+        - group: admissionregistration.k8s.io
+          jqPathExpressions:
+          - .webhooks[]?.clientConfig.caBundle
+          kind: ValidatingWebhookConfiguration
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
@@ -31,7 +44,7 @@ spec:
       kind: ValidatingWebhookConfiguration
       jqPathExpressions:
       - '.webhooks[]?.clientConfig.caBundle'
-    - group: v1
+    - group: v1=
       kind: Secret
       jsonPointers:
       - /data
