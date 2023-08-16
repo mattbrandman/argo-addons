@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: aws-load-balancer-controller-eks-irsa
+  name: aws-load-balancer-controller-eks
 automountServiceAccountToken: false
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -20,7 +20,7 @@ spec:
       valuesObject:
         serviceAccount:
           create: false
-          name: aws-load-balancer-controller-eks-irsa
+          name: aws-load-balancer-controller-eks
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
