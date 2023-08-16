@@ -19,3 +19,11 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
+  ignoreDifferences:
+    - group: apps/v1
+      kind: MutatingWebhookConfiguration
+    - group: apps/v1
+      kind: ValidatingWebhookConfiguration
+    - group: apps/v1
+      kind: Secret
+
