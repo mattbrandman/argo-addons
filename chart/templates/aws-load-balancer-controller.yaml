@@ -19,6 +19,9 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
+  syncPolicy:
+    syncOptions:
+    - RespectIgnoreDifferences=true
   ignoreDifferences:
     - group: admissionregistration.k8s.io
       kind: MutatingWebhookConfiguration
