@@ -20,10 +20,10 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
   ignoreDifferences:
-    - group: apps/v1
+    - group: admissionregistration.k8s.io
       kind: MutatingWebhookConfiguration
-    - group: apps/v1
+    - group: admissionregistration.k8s.io
       kind: ValidatingWebhookConfiguration
-    - group: apps/v1
+    - group: ""
       kind: Secret
 
