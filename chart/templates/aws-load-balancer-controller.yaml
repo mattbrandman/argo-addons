@@ -16,6 +16,8 @@ spec:
         serviceAccount:
           create: true
           name: aws-load-balancer-controller-eks
+          annotations:
+            eks.amazonaws.com/role-arn: "arn:aws:iam::345796856102:role/aws-load-balancer-controller-eks-irsa"
         ignoreDifferences:
         - group: ""
           jsonPointers:

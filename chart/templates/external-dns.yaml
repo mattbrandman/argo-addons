@@ -16,6 +16,8 @@ spec:
         serviceAccount:
           create: true
           name: external-dns-eks
+          annotations:
+            eks.amazonaws.com/role-arn: "arn:aws:iam::345796856102:role/external-dns-eks-irsa"
         ignoreDifferences:
         - group: ""
           jsonPointers:
