@@ -26,6 +26,7 @@ spec:
     namespace: external-dns
   syncPolicy:
     syncOptions:
+    - CreateNamespace=true
     - RespectIgnoreDifferences=true
   ignoreDifferences:
     - group: v1=
