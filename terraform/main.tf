@@ -25,7 +25,7 @@ resource "aws_iam_role" "external_dns_eks_irsa" {
         Action = "sts:AssumeRoleWithWebIdentity",
         Condition = {
           StringEquals = {
-            "oidc.eks.us-east-1.amazonaws.com/id/76709DE5227BE515A87A2A4A50D3DB11:sub" = "system:serviceaccount:external-dns:external-dns-eks",
+            "oidc.eks.us-east-1.amazonaws.com/id/DB3C6E53117795AEB134D71C4FD53332:sub" = "system:serviceaccount:external-dns:external-dns-eks",
             "oidc.eks.us-east-1.amazonaws.com/id/DB3C6E53117795AEB134D71C4FD53332:aud" = "sts.amazonaws.com"
           }
         }
