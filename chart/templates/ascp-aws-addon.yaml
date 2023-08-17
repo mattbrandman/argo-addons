@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    chart: aws-secrets-manager
+    chart: secrets-store-csi-driver-provider-aws
     repoURL:  https://aws.github.io/secrets-store-csi-driver-provider-aws
     targetRevision: 0.3.4
     helm:
-      releaseName: aws-secrets-manager
+      releaseName: secrets-store-csi-driver-provider-aws
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ascp-addon
