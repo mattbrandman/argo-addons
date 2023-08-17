@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ascp-aws-addon
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: aws-secrets-manager
+    repoURL:  https://aws.github.io/secrets-store-csi-driver-provider-aws
+    targetRevision: 1.3.4
+    helm:
+      releaseName: aws-secrets-manager
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: ascp-addon
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
