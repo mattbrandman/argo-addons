@@ -8,7 +8,7 @@ spec:
   source:
     chart: istio-official/gateway
     repoURL:   https://istio-release.storage.googleapis.com/charts
-    targetRevision: 1.3.4
+    targetRevision: 1.18.2
     helm:
       releaseName: istio-official/gateway
   destination:
