@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     chart: aws-gateway-controller-chart
-    repoURL: public.ecr.aws/aws-application-networking-k8s/
+    repoURL: public.ecr.aws/aws-application-networking-k8s
     targetRevision: 0.0.15
     helm:
       releaseName: aws-gateway-controller-chart
