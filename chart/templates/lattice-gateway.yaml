@@ -1,16 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: envoy-gateway
+  name: lattice-gateway
   namespace: argocd
 spec:
   project: default
   source:
-    chart: gateway-helm
-    repoURL: docker.io/envoyproxy
-    targetRevision: v0.5.0
+    chart: aws-gateway-controller-chart
+    repoURL: public.ecr.aws/aws-application-networking-k8s
+    targetRevision: v0.0.14
     helm:
-      releaseName: gateway-helm
+      releaseName: aws-gateway-controller-chart
+      valuesObject:
+        serviceAccount:
+          create: true
+          name: lattice-eks
+          annotations:
+            eks.amazonaws.com/role-arn: "arn:aws:iam::345796856102:role/lattice-eks-irsa"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
