@@ -46,7 +46,7 @@ spec:
       kind: ValidatingWebhookConfiguration
       jqPathExpressions:
       - '.webhooks[]?.clientConfig.caBundle'
-    - group: v1=
+    - group: ""
       kind: Secret
       jsonPointers:
       - /data
