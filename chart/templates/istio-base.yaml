@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    chart: istio-base
+    chart: base
     repoURL: https://istio-release.storage.googleapis.com/charts
     targetRevision: 1.18.2
     helm:
-      releaseName: istio
+      releaseName: base
   destination:
     server: "https://kubernetes.default.svc"
     namespace: istio-system
