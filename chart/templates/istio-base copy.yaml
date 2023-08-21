@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: istiod
       valuesObject:
+        sidecarInjectorWebhook:
+          enableNamespacesByDefault: true
         serviceAccount:
           create: true
   destination:
