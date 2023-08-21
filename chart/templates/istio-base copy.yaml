@@ -16,6 +16,9 @@ spec:
           enableNamespacesByDefault: true
         serviceAccount:
           create: true
+        valuesObject:
+          hostNetwork:
+            enabled: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: istio-system
