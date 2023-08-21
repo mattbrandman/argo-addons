@@ -13,7 +13,7 @@ spec:
       releaseName: gateway
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: istio-ingres
+    namespace: istio-system
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
