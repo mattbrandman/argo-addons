@@ -1,21 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: istio-gateway
-  namespace: argocd
-spec:
-  project: default
-  source:
-    chart: gateway
-    repoURL:   https://istio-release.storage.googleapis.com/charts
-    targetRevision: 1.18.2
-    helm:
-      releaseName: gateway
-      serviceAccount:
-          create: true
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: istio-ingress
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: istio-gateway
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     chart: gateway
+#     repoURL:   https://istio-release.storage.googleapis.com/charts
+#     targetRevision: 1.18.2
+#     helm:
+#       releaseName: gateway
+#       serviceAccount:
+#           create: true
+#   destination:
+#     server: "https://kubernetes.default.svc"
+#     namespace: istio-ingress
+#   syncPolicy:
+#     syncOptions:
+#     - CreateNamespace=true
